@@ -9,9 +9,14 @@ function set_date() {
 }
 
 async function playSound () {
-    tick.loop = false;
-    tick.currentTime = 0;
-    tick.play();
+    try {
+        tick.loop = false;
+        tick.currentTime = 0;
+        tick.play().catch(e => {});
+    } catch (e) {
+        
+    }
+  
 }
 
 
