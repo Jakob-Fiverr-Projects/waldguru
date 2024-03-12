@@ -1,0 +1,254 @@
+2,404207362885049 s = 1 Matha/Sekunde
+79,33884297520661 s = 1 Uruwa/Minute = 33 Matha/Sekunden
+2618,18181818181818 s = 1 Zitika/Stunde = 33 Uruwa/Minuten
+86400 s = 1 Moriya/Tag = 33 Zitika/Stunden
+950400 s = 1 Vishna/Woche = 11 Moriya/Tage
+2851200 s = 1 Tschabar/Monat = 3 Vishna/Wochen
+31363200 s = 1 Agai/Jahr = 11 Tschabar/Monate = 363 Moriya/Tage
+
+Dann folgen ca. 2 Tage Zwischenzeit bis zum Neustart nach der Tag und Nachtgleiche am Mittagspunkt der Sonne. 
+
+(Sonnenhöhenwinkel 41,50° Messpunkt: Horizont inkl. Refraktion zu Sonnenmitte
+Schattenlänge:
+1m hoch = 1,13 m
+2m hoch = 2,26 m
+3m hoch = 3,39 m)
+
+Die Neustartzeiten (Reset) des Kalenders sind:
+
+2024 17. März 12h16m15s MEZ/CET
+2025 17. März 12h16m19s
+2026 18. März 12h16m06s
+2027 18. März 12h16m10s
+2028 17. März 12h16m15s
+2029 17. März 12h16m19s
+2030 18. März 12h16m05s
+2031 18. März 12h16m10s
+2032 17. März 12h16m14s
+2033 17. März 12h16m18s
+2034 18. März 12h16m05s
+
+Auf dem Kalender ist nach Ablauf des 363. Tages:
+
+Das Jahr ist ganz normal weiter zu sehen.
+Im Monatsfeld steht: Heiliger Raum (bis Neustart)
+Im Wochenfeld steht: Neubelebung (bis Neustart)
+Der Tag 364 heißt: Akzeptanz
+Der Tag 365 heißt: Göttliche Heiligkeit
+Da das Jahr länger ist als 365 Tage schaltet der Kalender ab Tag 366
+in den Countdownmodus bis zum Neujahr und zählt rückwärts.
+
+Nach dem 365. Tag:
+
+Jahr: bleibt gleich
+Monat zeigt: Countdown
+Woche zeigt: bis
+Tag zeigt: Neujahr
+Zitika/Stunde zeigt: Anzahl der Zitika bis Neujahr (Uhr rechnet rückwärts)
+Uruwa/Minute zeigt: Anzahl der Uruwa bis Neujahr (Uhr rechnet rückwärts)
+Matha/Sekunde zeigt: Anzahl der Matha bis Neujahr (Uhr rechnet rückwärts)
+Bei Stunde 1, Minute 1 und Sekunde 1 ist der Countdown abgelaufen und die Uhr resetet.
+
+Mit dem erreichen der Neustartzeiten springt der Kalender 
+
+Jahr + 1
+Monat auf 1
+Woche auf 1
+Tag auf 1
+Stunde auf 1
+Minute auf 1
+Sekunde auf 1
+
+Der Tag beginnt mit der Stunde 1, Minute 1 und Sekunde 1
+Der Tag endet mit der Stunde 33, Minute 33 und Sekunde 33
+Es gibt keine 0
+
+Die Uhr startet heuer 2024 - am 17. März um 12h16m15s Uhr am Sonnenhöchststand Mitteleuropäische Zeit (MEZ)
+
+Referenzzeiten für die Überprüfung:
+
+20.06.2024 12:16:15 Tagesbeginn: Uhrzeit 1z1u1m Datum: 3 Monat, 9 Woche, Tag 8, Zitika/Stunde 1, Uruwa/Minute 1, Matha/Sekunde 1.
+01.08.2024 12:16:15 Tagesbeginn: Uhrzeit 1z1u1m Datum: 5 Monat, 13 Woche, Tag 6, Zitika 1, Uruwa 1, Matha 1
+31.10.2024 12:16:15 Tagesbeginn: Uhrzeit 1z1u1m Datum: 7 Monat, 21 Woche, Tag 9, Zitika 1, Uruwa 1, Matha 1
+21.12.2024 12:16:15 Tagesbeginn: Uhrzeit 1z1u1m Datum: 9 Monat, 26 Woche, Tag 5, 1z, 1u, 1m
+24.12.2024 12:16:15 Tagesbeginn: Uhrzeit 1z1u1m Datum: 9 Monat, 26 Woche, Tag 8, 1z, 1u, 1m
+01.02.2025 12:16:15 Tagesbeginn: Uhrzeit 1z1u1m Datum: 10 Monat, 30 Woche, Tag 4, 1z, 1u, 1m
+
+
+
+(Der neue 0 Meridian Nord-Süd läuft direkt über den Gipfel - Berchtesgadener Hochthron - Untersberg.
+Der Mittagspunkt wird immer von dort gemessen und ist der Startpunkt des Jahres.
+Koordinaten: 47° 41´ 39" N - 12° 59´ 10" O)
+Quelle:
+https://www.sonnenverlauf.de/#/47.6943,12.9861,12/2034.03.18/12:16/3/3
+
+Ein Erdumlauf um die Sonne, dauert ca. 365 Tage 5 Stunden und 30 - 55 Minuten, je nach Jahr.
+
+Die Namen der Monate:
+
+1. Tschabar/Monat = des Erwachens - Ahhwi
+2. Tschabar/Monat = der Vorbereitung - Molwo 
+3. Tschabar/Monat = des Erblühens - Lawam
+4. Tschabar/Monat = des Wachstums - Ahhwa
+5. Tschabar/Monat = der Reife - Huwam
+6. Tschabar/Monat = der Ernte -  Tamwi
+7. Tschabar/Monat = des Abschluss - Brawi
+8. Tschabar/Monat = der Einkehr - Muram
+9. Tschabar/Monat = des Friedens - Harima
+10. Tschabar/Monat = der Konzentration - Ishwa
+11. Tschabar/Monat = der Wiedergeburt - Fuhwi
+
+Die Namen der Wochen:
+
+1. Vishna (Woche) = der Barmherzigkeit
+2. Vishna (Woche) = der Liebe
+3. Vishna (Woche) = des Friedens
+4. Vishna (Woche) = der Heilung
+5. Vishna (Woche) = der Verbundenheit
+6. Vishna (Woche) = des Staunens
+7. Vishna (Woche) = des Lachens
+8. Vishna (Woche) = der Weisheit
+9. Vishna (Woche) = des Glücks 
+10. Vishna (Woche) = der Einheit
+11. Vishna (Woche) = der Meisterschaft
+
+12. Vishna (Woche) = der Großzügigkeit
+13. Vishna (Woche) = des Wohlwollens
+14. Vishna (Woche) = des Genusses
+15. Vishna (Woche) = des Feierns
+16. Vishna (Woche) = der Wunder
+17. Vishna (Woche) = der Dankbarkeit
+18. Vishna (Woche) = des Vertrauens
+19. Vishna (Woche) = des Überblicks
+20. Vishna (Woche) = der Konzentration
+21. Vishna (Woche) = des Loslassens
+22. Vishna (Woche) = des Tiefen Empfindens
+
+23. Vishna (Woche) = der Geborgenheit
+24. Vishna (Woche) = des Zuhause
+25. Vishna (Woche) = der Vorfreude
+26. Vishna (Woche) = der Heiligkeit
+27. Vishna (Woche) = der Segnung
+28. Vishna (Woche) = der Gnade
+29. Vishna (Woche) = der Gegenwart
+30. Vishna (Woche) = des Inneren Lichts
+31. Vishna (Woche) = des Dienens
+32. Vishna (Woche) = der Selbstüberwindung
+33. Vishna (Woche) = der Vollendung
+
+
+Tag/Moriya / Agai/Jahr / Zitika/Stunde / Uruwa/Minute /Matha/Sekunde
+
+1   Tag = der Glückseligkeit
+2.  Tag = des Tiefen Friedens
+3.  Tag = der Liebe und Reinheit
+4.  Tag = der Klarheit
+5.  Tag = der Heilung 
+6.  Tag = der Hingabe an das Leben
+7.  Tag = des Inneren Friedens
+8.  Tag = der Einfachheit
+9.  Tag = der Stille
+10. Tag = der Achtsamkeit
+11. Tag = der Göttliche Ordnung
+
+12. Tag = der Liebe zu allen Mitgeschöpfen
+13. Tag = der Hingabe zur Aufgabe
+14. Tag = des Seelen Friedens 
+15. Tag = des Inneren Lichts 
+16. Tag = des lichtvollen Manifestierens
+17. Tag = des Einheitsbewusstseins
+18. Tag = der Gemeinschaftsglück
+19. Tag = der Multidimensionalität
+20. Tag = der Hingabe an die Liebe
+21. Tag = der Flow-Erhaltung
+22. Tag = der Hingabe an das Göttliche
+
+23. Tag = des Familienglücks
+24. Tag = der Liebe zur Gemeinschaft
+25. Tag = der Entscheidung
+26. Tag = der Harmonie mit allen Wesen
+27. Tag = des Ahnenglücks
+28. Tag = der Weisheit
+29. Tag = des Wahren Selbst
+30. Tag = der Heiligkeit (im Sinne von heilsein, göttlichsein auf allen Ebenen)
+31. Tag = der Göttliche Universalität
+32. Tag = des Allumfassenden Frieden
+33. Tag = der Allverbundenheit
+
+Der Tag 364 heißt: der Akzeptanz
+Der Tag 365 heißt: der Göttliche Heiligkeit
+
+Überblick:
+
+1 Tag hat 35937 Matha = 1 Tag hat 86400 Sekunden
+1 Tag hat 1089 Uruwa = 1 Tag hat 1440 Minuten
+1 Tag hat 33 Zitika = 1 Tag hat 24 Stunden
+1 Tschabar(monat) hat 3 Vishna (wochen) zu je 11 Moriya (tagen) (immer)
+11 Tschabar (monate) hat das Agai (Jahr) = 363 Tage
+Die Tage werden von Mittag bis Mittag gezählt.
+
+
+Die Formel um ein Datum auszurechnen: 24.03. 23:35 Uhr
+
+Tage von der Neustartzeit bis zum gewünschten Datum zählen = Ergebnis x 86400 Sekunden = Tage in Sekunden
+Dann die Sekunden ausrechnen, die über den vollen Tag hinaus gehen. 
+Die Sekunden ab Neustartzeit (12h16m) dazu zählen = Ergebnis Tage in Sekunden + Ergebnis Stunden und Minuten in Sekunden = Sekunden seit Neustart
+
+Die Sekunden kann man jetzt in Matha (Sekunden) umrechnen... indem man folgende Rechnung macht.
+
+35937 matha (1Tag in neuSek) x Ergebnis der oberen Rechnung in Sekunden / 86400 (1 Tag in Sekunden) = Ergebnis in Matha (Volle Zahl Matha, Nach Komma ist zentel/hunderstel/tausendstel Matha.)
+
+
+Rechenbeispiel: 24.03.2024 23:35 Uhr (ohne Sommerzeit)
+
+Sommerzeit beginn: Letzter Sonntag im März 31. März 2 Uhr + 1 h
+Sommerzeit Ende: Letzter Sonntag im Oktober 27. Okt 3 Uhr - 1 h
+
+Schaltjahre beim Tage zählen nicht vergessen. +1 Tag (29. Feb) alle 4 Jahre. 2024 ist ein Schaltjahr.
+
+Tagesbeginn: 12:16 Uhr Mez 
+
+Rechne die vollen Tage 12 Uhr Mittags - 12 Uhr Mittags von Kalenderstart: 17. März bis 24. März aus.
+17. 18. 19. 20. 21. 22. 23. 24. März = 8 Tage x 86400 = 8Tage in Sekunden.
+
+Um die Uhrzeit auf den Kalender umzurechnen muss man schaun, ob die Zeit vor 12:16:10 liegt oder dannach.
+Uhrzeiten in MEZ vor 12:16:10 Uhr gehören zum Vortag in diesem Kalender, ab 12:16:10 Uhr ist der neue Tag, dann muss man die übrige Zeit noch extra ausrechnen.
+
+Von 12:16 Uhr sind es 44 Minuten auf die volle Stunde (13 Uhr)
+10 Stunden bis 23 Uhr
++ 35 Minuten
+
+44m + 35m + 10 Stunden (600m) = 679 minuten nach 12:16 Uhr
+
+Jetzt rechnen wir die 679minuten in Sekunden um: 
+
+679 m x 60s = 40740 Sekunden
+
+Um jetzt auf Matha umzurechnen:
+
+35937matha x Ergebnis in Sekunden 40740 / 86400sekunden = Matha 16945,29375 seit Kalenderreset.
+
+Um jetzt auszurechnen, wo wir uns am Kalender befinden, rechnen wir jetzt aus den Matha wieder Uruwa(mintuen) und Zitika(stunden) aus.
+
+16945,29375 Matha / 33 = 513,49375 Uruwa
+
+Jetzt wollen wir wissen wie viele Matha übrig bleiben, wenn wir die 513 Uruwa abziehen.
+Dafür müssen wir ausrechnen, wieviel 513 Uruwa in Matha sind und das Ergebnis, dann vom Gesamtergebnis in Matha abziehen.
+
+513uruwa x 33matha = 16929 matha
+16945 Gesamtergebnis Vorrechnung - minus - 16929 matha = 16. Matha (Endergebnis für Matha)
+
+Jetzt rechnen wir die 513 uruwa in Zitika (Stunden) um.
+*513,49375 Uruwa / 33 Zitika = 15,(560416) Zitika (Stunden) = 15. Zitika (Endergebnis für Zitika)
+
+Um setzt die exakte Uruwa und Zitika auszurechnen müssen wir wieder das Ergebnis von 15 Zitika - der Zahl in Uruwa rechnen,
+damit wir die exakten Uruwa-Wert bekommen.
+
+15 Zitika x 33 Uruwa = 495 Uruwa
+513uruwa (Ergebnis oben*) - 495uruwa = 18 Uruwa (Endergebnis für Uruwa)
+
+Wir wissen jetzt das 23:35 in Lemurischer Zeitrechnung: 15 Zitika 18 Uruwa 16 Matha sind.
+
+
+
+
