@@ -68,7 +68,7 @@ function get_day_str(day, year) {
         case 29:
             return "des Wahren Selbst";
         case 30:
-            return "der Heiligkeit (im Sinne von heilsein, göttlichsein auf allen Ebenen)";
+            return "der Heiligkeit";
         case 31:
             return "der Göttliche Universalität";
         case 32:
