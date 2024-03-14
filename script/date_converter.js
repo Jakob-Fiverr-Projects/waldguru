@@ -1,7 +1,7 @@
 
 
 const RESET_TIMES = [
-    "2023 17. März 12h16m15s",
+    "2023 17. März 12h16m11s",
     "2024 17. März 12h16m15s",
     "2025 17. März 12h16m19s",
     "2026 18. März 12h16m06s",
@@ -106,11 +106,22 @@ function wald_seconds_to_months(seconds) {
 }
 
 function wald_seconds_to_years(seconds) {
-    return parseInt(seconds / (33 * 33 * 33 * 33 * 11)) % 33 + 1;
+    return parseInt(seconds / (33 * 33 * 33 * 33 * 11)) + 1;
 }
+
 
 function secs_from_date(d) {
     return d.getTime() / 1000;
+}
+
+function get_current_year(greg_seconds) {
+    for (var i = 1; i < RESET_TIMES.length; i++) {
+        var d = string_to_date(RESET_TIMES[i]);
+        if (d.getTime() / 1000 >= greg_seconds) {
+            return ((i-2) % 33) + 1 
+        }
+    }
+    return 1;
 }
 
 function is_countdown(seconds) {
@@ -120,6 +131,9 @@ function is_countdown(seconds) {
     }
     return false;
 }
+
+
+
 
 function pad(num, size) {
     num = num.toString();
@@ -141,7 +155,7 @@ var d = new Date(2024, 5, 20, 13, 16, 15);
 var secs = greg_seconds_to_waldguru_seconds(d.getTime() / 1000);
 console.log(d);
 console.log(secs);
-console.log(wald_seconds_to_years(secs));
+console.log(get_current_year(d.getTime() / 1000));
 console.log(wald_seconds_to_months(secs));
 console.log(wald_seconds_to_weeks(secs));
 console.log(wald_seconds_to_days(secs));
@@ -150,12 +164,13 @@ console.log(wald_seconds_to_minutes(secs));
 console.log(wald_seconds_to_seconds(secs));
 
 
+
 // 01.08.2024 12:16:15  CEST
 d = new Date(2024, 7, 1, 13, 16, 15);
 secs = greg_seconds_to_waldguru_seconds(d.getTime() / 1000);
 console.log(d);
 console.log(secs);
-console.log(wald_seconds_to_years(secs));
+console.log(get_current_year(d.getTime() / 1000));
 console.log(wald_seconds_to_months(secs));
 console.log(wald_seconds_to_weeks(secs));
 console.log(wald_seconds_to_days(secs));
@@ -169,7 +184,7 @@ d = new Date(2024, 9, 31, 12, 16, 15);
 secs = greg_seconds_to_waldguru_seconds(d.getTime() / 1000);
 console.log(d);
 console.log(secs);
-console.log(wald_seconds_to_years(secs));
+console.log(get_current_year(d.getTime() / 1000));
 console.log(wald_seconds_to_months(secs));
 console.log(wald_seconds_to_weeks(secs));
 console.log(wald_seconds_to_days(secs));
@@ -184,7 +199,7 @@ d = new Date(2024, 11, 21, 12, 16, 15);
 secs = greg_seconds_to_waldguru_seconds(d.getTime() / 1000);
 console.log(d);
 console.log(secs);
-console.log(wald_seconds_to_years(secs));
+console.log(get_current_year(d.getTime() / 1000));
 console.log(wald_seconds_to_months(secs));
 console.log(wald_seconds_to_weeks(secs));
 console.log(wald_seconds_to_days(secs));
@@ -198,7 +213,7 @@ d = new Date(2024, 11, 24, 12, 16, 15);
 secs = greg_seconds_to_waldguru_seconds(d.getTime() / 1000);
 console.log(d);
 console.log(secs);
-console.log(wald_seconds_to_years(secs));
+console.log(get_current_year(d.getTime() / 1000));
 console.log(wald_seconds_to_months(secs));
 console.log(wald_seconds_to_weeks(secs));
 console.log(wald_seconds_to_days(secs));
@@ -214,7 +229,7 @@ d = new Date(2025, 1, 1, 12, 16, 15);
 secs = greg_seconds_to_waldguru_seconds(d.getTime() / 1000);
 console.log(d);
 console.log(secs);
-console.log(wald_seconds_to_years(secs));
+console.log(get_current_year(d.getTime() / 1000));
 console.log(wald_seconds_to_months(secs));
 console.log(wald_seconds_to_weeks(secs));
 console.log(wald_seconds_to_days(secs));
@@ -230,7 +245,7 @@ d = new Date(2025, 2, 16, 12, 16, 15);
 secs = greg_seconds_to_waldguru_seconds(d.getTime() / 1000);
 console.log(d);
 console.log(secs);
-console.log(wald_seconds_to_years(secs));
+console.log(get_current_year(d.getTime() / 1000));
 console.log(wald_seconds_to_months(secs));
 console.log(wald_seconds_to_weeks(secs));
 console.log(wald_seconds_to_days(secs));
@@ -245,7 +260,7 @@ d = new Date(2025, 2, 16, 12, 16, 50);
 secs = greg_seconds_to_waldguru_seconds(d.getTime() / 1000);
 console.log(d);
 console.log(secs);
-console.log(wald_seconds_to_years(secs));
+console.log(get_current_year(d.getTime() / 1000));
 console.log(wald_seconds_to_months(secs));
 console.log(wald_seconds_to_weeks(secs));
 console.log(wald_seconds_to_days(secs));
@@ -261,7 +276,7 @@ d = new Date(2025, 2, 17, 12, 16, 20, 500);
 secs = greg_seconds_to_waldguru_seconds(d.getTime() / 1000);
 console.log(d);
 console.log(secs);
-console.log(wald_seconds_to_years(secs));
+console.log(get_current_year(d.getTime() / 1000));
 console.log(wald_seconds_to_months(secs));
 console.log(wald_seconds_to_weeks(secs));
 console.log(wald_seconds_to_days(secs));
