@@ -3,6 +3,17 @@
 
 var last_str = "";
 
+var Mathaton = false; 
+
+function toggleMathaton() {
+    Mathaton = !Mathaton;
+    if (Mathaton) {
+        document.getElementById("math").innerHTML = "Mathaton aus";
+    } else {
+        document.getElementById("math").innerHTML = "Mathaton ein";
+    }
+}
+
 function set_date() {
     var cur_year = wald_seconds_to_years(greg_seconds_to_waldguru_seconds(Date.now() / 1000));
 
@@ -28,6 +39,9 @@ function set_date() {
     document.getElementById("month-label").innerHTML = 
         get_month_str(wald_seconds_to_months(greg_seconds_to_waldguru_seconds(Date.now() / 1000)),  cur_year);
 
+    year.innerHTML = get_current_year(Date.now() / 1000);
+    document.getElementById("year-label").innerHTML = get_day_str(get_current_year(Date.now() / 1000), year);
+
 
     
 
@@ -35,6 +49,9 @@ function set_date() {
     1
 async function playSound () {
     try {
+        if (!Mathaton) {
+            return;
+        }
         tick.loop = false;
         tick.currentTime = 0;
         tick.play().catch(e => {});

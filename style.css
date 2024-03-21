@@ -1,7 +1,7 @@
 
 
 :root {
-    --text-color: #d7ab00d6;
+    --text-color: #c09b09d6;
     --bg-color: #ffffffbd;
 }
 
@@ -72,6 +72,7 @@ h4 {
 
 .time_label {
     margin-top: 30px;
+    font-weight: bold;
     background-color: var(--text-color); 
     color: var(--bg-color);
     padding: 10px;
@@ -79,7 +80,7 @@ h4 {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: max(1.8cqmin, 12px);
+    font-size: max(2cqmin, 12px);
 }
 
 .timeWrap {
@@ -140,4 +141,13 @@ h4 {
 .date * {
     color: var(--text-color);
     font-size: max(2cqmin, 11px);
+}
+
+#math {
+    margin-top: 30px;
+    color: var(--text-color);
+    font-size: max(2cqmin, 11px);
+    text-align: center;
+    border: 1px solid var(--text-color);
+    padding: 10px;
 }
