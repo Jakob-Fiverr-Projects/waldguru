@@ -94,7 +94,7 @@ function wald_seconds_to_hours(seconds) {
 }
 
 function wald_seconds_to_days(seconds) {
-    return parseInt(seconds / (33 * 33 * 33)) % (11) + 1;
+    return parseInt(seconds / (33 * 33 * 33)) % (33) + 1;
 }
 
 function wald_seconds_to_weeks(seconds) {
