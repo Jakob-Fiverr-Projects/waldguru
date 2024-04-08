@@ -44,7 +44,7 @@ function get_day_str(day, year) {
         case 17:
             return "des Einheitsbewusstseins";
         case 18:
-            return "der Gemeinschaftsglück";
+            return "des Gemeinschaftsglücks";
         case 19:
             return "der Multidimensionalität";
         case 20:
@@ -58,7 +58,7 @@ function get_day_str(day, year) {
         case 24:
             return "der Liebe zur Gemeinschaft";
         case 25:
-            return "der Entscheidung";
+            return "der lichtvollen Entscheidung";
         case 26:
             return "der Harmonie mit allen Wesen";
         case 27:
@@ -70,7 +70,7 @@ function get_day_str(day, year) {
         case 30:
             return "der Heiligkeit";
         case 31:
-            return "der Göttliche Universalität";
+            return "der Göttlichen Universalität";
         case 32:
             return "des Allumfassenden Frieden";
         case 33:
