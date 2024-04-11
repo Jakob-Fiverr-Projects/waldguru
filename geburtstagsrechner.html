@@ -12,35 +12,10 @@
     <div class="timeBGWrap">
         <div class="timeBackground">
             <h3> Der lemurische Lichtzeit Kalender</h3>
-            <h1> Agai Indolam </h1>
+            <h1> Geburtstagsrechner </h1>
+            <h2> Bitte wähle ein Datum </h2>
             
-            <div class="timeWrap">
-                <div class="time">
-                    <div class="time_shower">
-                        <h4> Zitika /h </h4>
-                        <h2 id="hour">00</h2>
-                        <div></div>
-                    </div>
-                    <div class="time_label" id="hour_label"> der Allverbundenheit </div>
-                    
-                </div>
-                <div class="time">
-                    <div class="time_shower">
-                        <h4> Uruwa /m </h4> 
-                        <h2 id="minute">00</h2>
-                        <div></div>
-                    </div>
-                    <div class="time_label" id="minute_label"> der Hingabe an das Göttliche </div>
-                </div>
-                <div class="time">
-                    <div class="time_shower">
-                        <h4> Matha /s </h4> 
-                        <h2 id="second">00</h2>
-                        <div></div>
-                    </div>
-                    <div class="time_label" id="second_label"> der Göttlichen Ordnung </div>
-                </div>
-            </div>
+            <input type="date" id="dateinp" onchange="updateDate()">
 
             <div class="date_wrap">
 
@@ -88,6 +63,33 @@
     <script src="script/date_converter.js"></script>
     <script src="script/date_str.js"></script>
     <script src="script/date_setter.js"></script>
+
+    <script>
+
+        function updateDate() {
+            let date = new Date(dateinp.value);
+            let millies = date.getTime();
+
+            var cur_year = wald_seconds_to_years(greg_seconds_to_waldguru_seconds(millies / 1000));
+
+            day.innerHTML = wald_seconds_to_days(greg_seconds_to_waldguru_seconds(millies / 1000));
+            document.getElementById("day-label").innerHTML = 
+                get_day_str(wald_seconds_to_days(greg_seconds_to_waldguru_seconds(millies / 1000)), cur_year);
+        
+            week.innerHTML = wald_seconds_to_weeks(greg_seconds_to_waldguru_seconds(millies / 1000));
+            document.getElementById("week-label").innerHTML = 
+                get_week_str(wald_seconds_to_weeks(greg_seconds_to_waldguru_seconds(millies / 1000)),  cur_year);
+        
+            month.innerHTML = wald_seconds_to_months(greg_seconds_to_waldguru_seconds(millies / 1000));
+            document.getElementById("month-label").innerHTML = 
+                get_month_str(wald_seconds_to_months(greg_seconds_to_waldguru_seconds(millies / 1000)),  cur_year);
+        
+            year.innerHTML = get_current_year(millies / 1000);
+            document.getElementById("year-label").innerHTML = get_day_str(get_current_year(millies / 1000), year);
+        
+        }
+
+    </script>
  
 
 
