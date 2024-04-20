@@ -40,7 +40,7 @@ function set_date() {
         get_month_str(wald_seconds_to_months(greg_seconds_to_waldguru_seconds(Date.now() / 1000)),  cur_year);
 
     year.innerHTML = get_current_year(Date.now() / 1000);
-    document.getElementById("year-label").innerHTML = get_day_str(get_current_year(Date.now() / 1000), year);
+    document.getElementById("year-label").innerHTML = get_day_str(get_current_year_mod(Date.now() / 1000), year);
 
 
     

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Agai Indolam - Lichtzeit Kalender</title>
+</head>
+<body>
+    
+
+    <div class="timeBGWrap">
+        <div class="timeBackground">
+            <h3> Der lemurische Lichtzeit Kalender</h3>
+            <h1> Zeitrechner </h1>
+            <h2> Bitte wähle ein Datum </h2>
+            
+            <input type="datetime-local" id="dateinp" onchange="updateDate()">
+
+            <div id="outp" style="text-align:left">
+
+                Dein Treffen findet um
+                ((Tag, Monat, Jahr)) ((Uhrzeit)) statt. <br> <br>
+
+                Das ist in Lemurischer Zeit: <br>
+                (Jahr) ((Agaizahl)) ((Agaiwort)). <br>
+                (Monat) ((Tschabarzahl)) ((Tschabarwort)). <br>
+                (Woche) ((Vishnazahl)) ((Vishnawort)). <br>
+                (Tag) ((Moriyazahl)) ((Moriyawort)). <br>
+                (Stunde) ((Zitikazahl)) ((Zitikawort)). <br>
+                (Minute) ((Uruwazahl)) ((Uruwawort)). <br>
+                (Sekunde) ((Mathazahl)) ((Mathawort)). <br>
+
+            </div>
+            <div style="width: 40px"> </div>
+            <button onclick='location.href="index.html"'> Zurück zum Kalender </button>
+
+
+        </div>
+    </div>
+
+
+    <audio id="tick" src="tick.mp3" >
+    </audio>
+
+    <script src="script/date_converter.js"></script>
+    <script src="script/date_str.js"></script>
+
+    <script>
+        var template = document.getElementById("outp").innerHTML;
+        function updateDate() {
+            var outp = document.getElementById("outp");
+            let date;
+            try {
+                date = new Date(dateinp.value);
+                if (date < Date.now()) {
+                    outp.style.visibility = "visible";
+                    outp.innerHTML = "Bitte wähle ein Datum in der Zukunft";
+                    return;
+                }
+                if (dateinp.value == "") {
+                    throw "empty date";
+                }
+            } catch (error) {
+                console.log(error);
+                outp.style.visibility = "hidden";
+                return;
+            }
+            outp.style.visibility = "visible";
+
+            let millies = date.getTime();
+
+
+            outp.innerHTML = template;
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Tag, Monat, Jahr\)\)/g, date.getDate() + "." + (date.getMonth() + 1) + "." + date.getFullYear());
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Uhrzeit\)\)/g, date.getHours() + ":" + date.getMinutes());
+
+
+            var cur_year = wald_seconds_to_years(greg_seconds_to_waldguru_seconds(millies / 1000));
+
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Agaizahl\)\)/g, cur_year);
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Agaiwort\)\)/g, get_day_str(cur_year%33, 1));
+
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Tschabarzahl\)\)/g, wald_seconds_to_months(greg_seconds_to_waldguru_seconds(millies / 1000)));
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Tschabarwort\)\)/g, get_month_str(wald_seconds_to_months(greg_seconds_to_waldguru_seconds(millies / 1000)), cur_year));
+
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Vishnazahl\)\)/g, wald_seconds_to_weeks(greg_seconds_to_waldguru_seconds(millies / 1000)));
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Vishnawort\)\)/g, get_week_str(wald_seconds_to_weeks(greg_seconds_to_waldguru_seconds(millies / 1000)), cur_year));
+
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Moriyazahl\)\)/g, wald_seconds_to_days(greg_seconds_to_waldguru_seconds(millies / 1000)));
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Moriyawort\)\)/g, get_day_str(wald_seconds_to_days(greg_seconds_to_waldguru_seconds(millies / 1000)), cur_year));
+
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Zitikazahl\)\)/g, wald_seconds_to_hours(greg_seconds_to_waldguru_seconds(millies / 1000)));
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Zitikawort\)\)/g, get_day_str(wald_seconds_to_hours(greg_seconds_to_waldguru_seconds(millies / 1000)), cur_year));
+
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Uruwazahl\)\)/g, wald_seconds_to_minutes(greg_seconds_to_waldguru_seconds(millies / 1000)));
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Uruwawort\)\)/g, get_day_str(wald_seconds_to_minutes(greg_seconds_to_waldguru_seconds(millies / 1000)), cur_year));
+
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Mathazahl\)\)/g, wald_seconds_to_seconds(greg_seconds_to_waldguru_seconds(millies / 1000)));
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Mathawort\)\)/g, get_day_str(wald_seconds_to_seconds(greg_seconds_to_waldguru_seconds(millies / 1000)), cur_year));
+
+            var year = document.getElementById("year");
+            var month = document.getElementById("month");
+
+
+
+        
+        }
+        updateDate();
+
+    </script>
+ 
+
+
+    <footer>
+        By Waldguru Robert Jeshua - <a href="https://www.waldguru-cbd.at"> www.waldguru-cbd.at </a>
+    </footer>
+</body>
+</html>

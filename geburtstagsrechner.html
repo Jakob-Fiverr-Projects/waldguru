@@ -13,45 +13,59 @@
         <div class="timeBackground">
             <h3> Der lemurische Lichtzeit Kalender</h3>
             <h1> Geburtstagsrechner </h1>
-            <h2> Bitte wähle ein Datum </h2>
             
-            <input type="date" id="dateinp" onchange="updateDate()">
+            <div id="inp">
 
-            <div class="date_wrap">
+                <label for="dateinp"> Geburtsdatum </label>
+                <input type="date" id="dateinp">
+                <label for="timeinp"> Geburtszeit </label>
+                <input type="time" id="timeinp">
 
-                <div class="date">
-                    <h3 id="year"> 1 </h3>
-                    <h4> Agai </h4>
-                    <h5> Jahr </h5>
-                    <h3 id="year-label"> Glückseligkeit </h3>
-                </div>
+                <button onclick="uploadDate()"> Berechnen </button>
+            </div>
 
-                <div class="date">
-                    <h3 id="month"> 11 </h3>
-                    <h4> Tschabar </h4>
-                    <h5> Monat </h5>
-                    <h3 id="month-label"> Wiedergeburt </h3>
-                </div> 
 
-                <div class="date">
-                    <h3 id="week"> 33 </h3>
-                    <h4> Vishna </h4>
-                    <h5> Woche </h5>
-                    <h3 id="week-label"> Vollendung </h3>
-                </div>
+
+
+            <div id="outp" style="visibility: hidden; pointer-events:None; position:fixed; animation: fade_in 14000ms">
+
+                Geburtszeit-Seelenplan-Analyse
+
+                Dein Geburtsdatum ((Tag, Monat, Jahr)) ((Uhrzeit)) offenbart im Lemurischen Kalendersystem, dem Agai Indolam, Kernbereiche deines Seelenplans für diese Inkarnation.. <br> <br>
                 
-                <div class="date">
-                    <h3 id="day"> 33 </h3>
-                    <h4> Moriya </h4>
-                    <h5> Tag </h5>
-                    <h3 id="day-label"> Allverbundenheit </h3>
-                </div>
+                Du wurdest im Agai (Jahr) ((Agaizahl)) ((Agaiwort)) geboren. <br>
+                Das bedeutet, das Ziel deiner Inkarnation ist die Entwicklung, Heilung und Entfaltung <br> <br>
+                
+                Du wurdest im Tschabar (Monat) ((Tschabarzahl)) ((Tschabarwort)) geboren. <br>
+                Dein Seelenauftrag für dieses Leben ist in den Genuß ((Tschabarwort)) zu kommen. <br><br>
+                
+                Du wurdest in der Vishna (Woche) ((Vishnazahl)) ((Vishnawort)) geboren. <br> 
+                Die Qualität ((Vishnawort)) ist deine mitgebrachte Seelenkraft, die es dir ermöglicht, deine Seelenziele und Aufträge spielend zu erfüllen. <br><br>
+                
+                Du wurdest am Moriya (Tag) ((Moriyazahl)) ((Moriyawort)) geboren. <br>
+                Dein Geburtsmoriya zeigt an wozu deine Seele berufen ist. Folge ((Moriyawort)) um deinen Platz in der Welt und deine weltliche Aufgabe zu finden. <br><br>
+                
+                Du wurdest in der Zitika (Stunde) ((Zitikazahl)) ((Zitikawort)) geboren. <br>
+                Das Feld ((Zitikawort)) ist deine persönliche Heilenergie. In dieser Energie regenerierst und heilst du schneller, weil es deinem Seelenwesen entspricht. <br><br>
+                
+                Du wurdest in der Uruwa (Minute) ((Uruwazahl)) ((Uruwawort)) geboren. <br>
+                Das Feld ((Uruwawort)) ist deine persönliche Entspanungsenergie. In dieser Qualität kann du tief entspannen und Kraft sammeln. <br> <br>
+                
+                Du wurdest in der Matha (Sekunde) ((Mathazahl)) ((Mathawort)) geboren. <br>
+                Immer wenn du Hilfe brauchst, gehe in die Energie ((Mathawort)) und du wirst schnell die richtigen Antworten finden.  <br> <br>
+                
+                Wenn du mehr erfahren willst oder eine persönliche Auswertung per Zoom haben möchtest, dann klicke hier: <br><br><br>
+
+                <button  onclick='location.href="https://www.waldguru-cbd.at/persönliches-lemurisches-horoskop"'> Persönliche Auswertung buchen </button>
+
+                <button onclick='location.href="index.html"'> Zurück zum Kalender </button>
+                
+
+           
+               
                    
             </div>
 
-            <div onclick="toggleMathaton()" id="math">
-                Mathaton ein
-            </div>
 
         </div>
     </div>
@@ -62,31 +76,65 @@
 
     <script src="script/date_converter.js"></script>
     <script src="script/date_str.js"></script>
-    <script src="script/date_setter.js"></script>
 
     <script>
+        var template = document.getElementById("outp").innerHTML;
+        function updateDate(date) {
+            var outp = document.getElementById("outp");
+    
+            outp.style.visibility = "visible";
+            outp.style.pointerEvents = "auto";
+            outp.style.position = "relative";
 
-        function updateDate() {
-            let date = new Date(dateinp.value);
+            inp.style.visibility = "hidden";
+            inp.style.pointerEvents = "none";
+            inp.style.position = "fixed";
+
             let millies = date.getTime();
+
+
+            outp.innerHTML = template;
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Tag, Monat, Jahr\)\)/g, date.getDate() + "." + (date.getMonth() + 1) + "." + date.getFullYear());
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Uhrzeit\)\)/g, date.getHours() + ":" + date.getMinutes());
+
 
             var cur_year = wald_seconds_to_years(greg_seconds_to_waldguru_seconds(millies / 1000));
 
-            day.innerHTML = wald_seconds_to_days(greg_seconds_to_waldguru_seconds(millies / 1000));
-            document.getElementById("day-label").innerHTML = 
-                get_day_str(wald_seconds_to_days(greg_seconds_to_waldguru_seconds(millies / 1000)), cur_year);
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Agaizahl\)\)/g, get_current_year(millies / 1000));
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Agaiwort\)\)/g, get_day_str(get_current_year_mod(millies / 1000), 1));
+
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Tschabarzahl\)\)/g, wald_seconds_to_months(greg_seconds_to_waldguru_seconds(millies / 1000)));
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Tschabarwort\)\)/g, get_month_str(wald_seconds_to_months(greg_seconds_to_waldguru_seconds(millies / 1000)), cur_year));
+
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Vishnazahl\)\)/g, wald_seconds_to_weeks(greg_seconds_to_waldguru_seconds(millies / 1000)));
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Vishnawort\)\)/g, get_week_str(wald_seconds_to_weeks(greg_seconds_to_waldguru_seconds(millies / 1000)), cur_year));
+
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Moriyazahl\)\)/g, wald_seconds_to_days(greg_seconds_to_waldguru_seconds(millies / 1000)));
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Moriyawort\)\)/g, get_day_str(wald_seconds_to_days(greg_seconds_to_waldguru_seconds(millies / 1000)), cur_year));
+
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Zitikazahl\)\)/g, wald_seconds_to_hours(greg_seconds_to_waldguru_seconds(millies / 1000)));
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Zitikawort\)\)/g, get_day_str(wald_seconds_to_hours(greg_seconds_to_waldguru_seconds(millies / 1000)), cur_year));
+
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Uruwazahl\)\)/g, wald_seconds_to_minutes(greg_seconds_to_waldguru_seconds(millies / 1000)));
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Uruwawort\)\)/g, get_day_str(wald_seconds_to_minutes(greg_seconds_to_waldguru_seconds(millies / 1000)), cur_year));
+
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Mathazahl\)\)/g, wald_seconds_to_seconds(greg_seconds_to_waldguru_seconds(millies / 1000)));
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Mathawort\)\)/g, get_day_str(wald_seconds_to_seconds(greg_seconds_to_waldguru_seconds(millies / 1000)), cur_year));
         
-            week.innerHTML = wald_seconds_to_weeks(greg_seconds_to_waldguru_seconds(millies / 1000));
-            document.getElementById("week-label").innerHTML = 
-                get_week_str(wald_seconds_to_weeks(greg_seconds_to_waldguru_seconds(millies / 1000)),  cur_year);
+        }
         
-            month.innerHTML = wald_seconds_to_months(greg_seconds_to_waldguru_seconds(millies / 1000));
-            document.getElementById("month-label").innerHTML = 
-                get_month_str(wald_seconds_to_months(greg_seconds_to_waldguru_seconds(millies / 1000)),  cur_year);
-        
-            year.innerHTML = get_current_year(millies / 1000);
-            document.getElementById("year-label").innerHTML = get_day_str(get_current_year(millies / 1000), year);
-        
+        if (localStorage.getItem("date")) {
+            updateDate(new Date(localStorage.getItem("date")));
+        }
+
+        function uploadDate() {
+            if (!document.getElementById("dateinp").value || !document.getElementById("timeinp").value) {
+                return;
+            }
+            var date = new Date(document.getElementById("dateinp").value + "T" + document.getElementById("timeinp").value);
+            localStorage.setItem("date", date);
+            // reload page
+            location.reload();
         }
 
     </script>
@@ -95,7 +143,6 @@
 
     <footer>
         By Waldguru Robert Jeshua - <a href="https://www.waldguru-cbd.at"> www.waldguru-cbd.at </a>
-        <a href="money.html"> <h2> Zum Geburtstagsrechner </h2> </a>
     </footer>
 </body>
 </html>
