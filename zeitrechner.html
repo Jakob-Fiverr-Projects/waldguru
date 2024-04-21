@@ -78,8 +78,8 @@
 
             var cur_year = wald_seconds_to_years(greg_seconds_to_waldguru_seconds(millies / 1000));
 
-            outp.innerHTML = outp.innerHTML.replace(/\(\(Agaizahl\)\)/g, cur_year);
-            outp.innerHTML = outp.innerHTML.replace(/\(\(Agaiwort\)\)/g, get_day_str(cur_year%33, 1));
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Agaizahl\)\)/g, get_current_year(millies / 1000));
+            outp.innerHTML = outp.innerHTML.replace(/\(\(Agaiwort\)\)/g, get_day_str(get_current_year_mod(millies / 1000), 1));
 
             outp.innerHTML = outp.innerHTML.replace(/\(\(Tschabarzahl\)\)/g, wald_seconds_to_months(greg_seconds_to_waldguru_seconds(millies / 1000)));
             outp.innerHTML = outp.innerHTML.replace(/\(\(Tschabarwort\)\)/g, get_month_str(wald_seconds_to_months(greg_seconds_to_waldguru_seconds(millies / 1000)), cur_year));
