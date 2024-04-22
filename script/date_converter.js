@@ -231,7 +231,7 @@ function get_current_year_mod(greg_seconds) {
     for (var i = 1; i < RESET_TIMES.length; i++) {
         var d = string_to_date(RESET_TIMES[i]);
         if (d.getTime() / 1000 >= greg_seconds) {
-            return ((i-126 + 33 * 100) % 33) + 1 
+            return ((i-125 + 33 * 100) % 33) + 1 
         }
     }
     return 1;
