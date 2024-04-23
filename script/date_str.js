@@ -1,7 +1,7 @@
 
 
 function get_day_str(day, year) {
-    if (year == 2) {
+    if (year != 1) {
         if (day == 1) {
             return "der Akzeptanz";
         } else {
@@ -80,7 +80,7 @@ function get_day_str(day, year) {
 
 
 function get_month_str(month, year) {
-    if (year == 2) {
+    if (year != 1) {
         return "Countdown"
     }
     switch (month) {
@@ -111,7 +111,7 @@ function get_month_str(month, year) {
 
 
 function get_week_str(week, year) {
-    if (year == 2) {
+    if (year != 1) {
         return "bis Neujahr"
     }
     switch (week) {

@@ -12,28 +12,59 @@
     <div class="timeBGWrap">
         <div class="timeBackground">
             <h3> Der lemurische Lichtzeit Kalender</h3>
-            <h1> Zeitrechner </h1>
-            <h2> Bitte wähle ein Datum </h2>
+            <h1> Geburtstagsrechner </h1>
             
-            <input type="datetime-local" id="dateinp" onchange="updateDate()">
+            <div id="inp">
 
-            <div id="outp" style="text-align:left">
+                <label for="dateinp"> Geburtsdatum </label>
+                <input type="date" id="dateinp">
+                <label for="timeinp"> Geburtszeit </label>
+                <input type="time" id="timeinp">
 
-                Dein Treffen findet um
-                ((Tag, Monat, Jahr)) ((Uhrzeit)) statt. <br> <br>
-
-                Das ist in Lemurischer Zeit: <br>
-                (Jahr) ((Agaizahl)) ((Agaiwort)). <br>
-                (Monat) ((Tschabarzahl)) ((Tschabarwort)). <br>
-                (Woche) ((Vishnazahl)) ((Vishnawort)). <br>
-                (Tag) ((Moriyazahl)) ((Moriyawort)). <br>
-                (Stunde) ((Zitikazahl)) ((Zitikawort)). <br>
-                (Minute) ((Uruwazahl)) ((Uruwawort)). <br>
-                (Sekunde) ((Mathazahl)) ((Mathawort)). <br>
-
+                <button onclick="uploadDate()"> Berechnen </button>
             </div>
-            <div style="width: 40px"> </div>
-            <button onclick='location.href="index.html"'> Zurück zum Kalender </button>
+
+
+
+
+            <div id="outp" style="">
+
+                Geburtszeit-Seelenplan-Analyse
+
+                Dein Geburtsdatum ((Tag, Monat, Jahr)) ((Uhrzeit)) offenbart im Lemurischen Kalendersystem, dem Agai Indolam, Kernbereiche deines Seelenplans für diese Inkarnation.. <br> <br>
+                
+                Du wurdest im Agai (Jahr) ((Agaizahl)) ((Agaiwort)) geboren. <br>
+                Das bedeutet, das Ziel deiner Inkarnation ist die Entwicklung, Heilung und Entfaltung <br> <br>
+                
+                Du wurdest im Tschabar (Monat) ((Tschabarzahl)) ((Tschabarwort)) geboren. <br>
+                Dein Seelenauftrag für dieses Leben ist in den Genuß ((Tschabarwort)) zu kommen. <br><br>
+                
+                Du wurdest in der Vishna (Woche) ((Vishnazahl)) ((Vishnawort)) geboren. <br> 
+                Die Qualität ((Vishnawort)) ist deine mitgebrachte Seelenkraft, die es dir ermöglicht, deine Seelenziele und Aufträge spielend zu erfüllen. <br><br>
+                
+                Du wurdest am Moriya (Tag) ((Moriyazahl)) ((Moriyawort)) geboren. <br>
+                Dein Geburtsmoriya zeigt an wozu deine Seele berufen ist. Folge ((Moriyawort)) um deinen Platz in der Welt und deine weltliche Aufgabe zu finden. <br><br>
+                
+                Du wurdest in der Zitika (Stunde) ((Zitikazahl)) ((Zitikawort)) geboren. <br>
+                Das Feld ((Zitikawort)) ist deine persönliche Heilenergie. In dieser Energie regenerierst und heilst du schneller, weil es deinem Seelenwesen entspricht. <br><br>
+                
+                Du wurdest in der Uruwa (Minute) ((Uruwazahl)) ((Uruwawort)) geboren. <br>
+                Das Feld ((Uruwawort)) ist deine persönliche Entspanungsenergie. In dieser Qualität kann du tief entspannen und Kraft sammeln. <br> <br>
+                
+                Du wurdest in der Matha (Sekunde) ((Mathazahl)) ((Mathawort)) geboren. <br>
+                Immer wenn du Hilfe brauchst, gehe in die Energie ((Mathawort)) und du wirst schnell die richtigen Antworten finden.  <br> <br>
+                
+                Wenn du mehr erfahren willst oder eine persönliche Auswertung per Zoom haben möchtest, dann klicke hier: <br><br><br>
+
+                <button  onclick='location.href="https://www.waldguru-cbd.at/persönliches-lemurisches-horoskop"'> Persönliche Auswertung buchen </button>
+
+                <button onclick='location.href="index.html"'> Zurück zum Kalender </button>
+                
+
+           
+               
+                   
+            </div>
 
 
         </div>
@@ -48,25 +79,8 @@
 
     <script>
         var template = document.getElementById("outp").innerHTML;
-        function updateDate() {
+        function updateDate(date) {
             var outp = document.getElementById("outp");
-            let date;
-            try {
-                date = new Date(dateinp.value);
-                if (date < Date.now()) {
-                    outp.style.visibility = "visible";
-                    outp.innerHTML = "Bitte wähle ein Datum in der Zukunft";
-                    return;
-                }
-                if (dateinp.value == "") {
-                    throw "empty date";
-                }
-            } catch (error) {
-                console.log(error);
-                outp.style.visibility = "hidden";
-                return;
-            }
-            outp.style.visibility = "visible";
 
             let millies = date.getTime();
 
@@ -77,7 +91,6 @@
 
 
             var cur_year = wald_seconds_to_years(greg_seconds_to_waldguru_seconds(millies / 1000));
-            console.log("cyear:" + cur_year);
 
             outp.innerHTML = outp.innerHTML.replace(/\(\(Agaizahl\)\)/g, get_current_year(millies / 1000));
             outp.innerHTML = outp.innerHTML.replace(/\(\(Agaiwort\)\)/g, get_day_str(get_current_year_mod(millies / 1000), 1));
@@ -99,15 +112,22 @@
 
             outp.innerHTML = outp.innerHTML.replace(/\(\(Mathazahl\)\)/g, wald_seconds_to_seconds(greg_seconds_to_waldguru_seconds(millies / 1000)));
             outp.innerHTML = outp.innerHTML.replace(/\(\(Mathawort\)\)/g, get_day_str(wald_seconds_to_seconds(greg_seconds_to_waldguru_seconds(millies / 1000)), cur_year));
-
-            var year = document.getElementById("year");
-            var month = document.getElementById("month");
-
-
-
         
         }
-        updateDate();
+        
+        if (localStorage.getItem("date")) {
+            updateDate(new Date(localStorage.getItem("date")));
+        }
+
+        function uploadDate() {
+            if (!document.getElementById("dateinp").value || !document.getElementById("timeinp").value) {
+                return;
+            }
+            var date = new Date(document.getElementById("dateinp").value + "T" + document.getElementById("timeinp").value);
+            localStorage.setItem("date", date);
+            // reload page
+            location.reload();
+        }
 
     </script>
  

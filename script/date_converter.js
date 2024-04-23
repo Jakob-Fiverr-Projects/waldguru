@@ -208,7 +208,7 @@ function wald_seconds_to_years(seconds) {
 }
 
 function wald_seconds_to_years_mod(seconds) {
-    return parseInt(seconds / (33 * 33 * 33 * 33 * 11) % 33) + 1;
+    return parseInt((seconds / (33 * 33 * 33 * 33 * 11)) % 33) + 1;
 }
 
 
