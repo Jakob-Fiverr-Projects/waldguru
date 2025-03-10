@@ -12,28 +12,31 @@
     <div class="timeBGWrap">
         <div class="timeBackground">
             <h3> Der lemurische Lichtzeit Kalender</h3>
-            <h1> Zeitrechner </h1>
+            <h1> Terminrechner </h1>
+            <h2> Umrechner von MEZ in Lichtzeit </h2>
             <h2> Bitte wähle ein Datum </h2>
             
             <input type="datetime-local" id="dateinp" onchange="updateDate()">
 
             <div id="outp" style="text-align:left">
 
-                Dein Treffen findet um
-                ((Tag, Monat, Jahr)) ((Uhrzeit)) statt. <br> <br>
+                Dein Treffen findet am
+                ((Tag, Monat, Jahr)) ((Uhrzeit)) (MEZ) statt. <br> <br>
 
-                Das ist in Lemurischer Zeit: <br>
-                (Jahr) ((Agaizahl)) ((Agaiwort)). <br>
-                (Monat) ((Tschabarzahl)) ((Tschabarwort)). <br>
-                (Woche) ((Vishnazahl)) ((Vishnawort)). <br>
-                (Tag) ((Moriyazahl)) ((Moriyawort)). <br>
-                (Stunde) ((Zitikazahl)) ((Zitikawort)). <br>
-                (Minute) ((Uruwazahl)) ((Uruwawort)). <br>
-                (Sekunde) ((Mathazahl)) ((Mathawort)). <br>
+                Das ist in Lemurischer Zeitrechnung (LLZ): <br> <br>
+                Am ((Moriyazahl)).((Tschabarzahl)). Agai ((Agaizahl)), um ((Zitikazahl)) Uhr ((Uruwazahl)) Uruwa <br>
+                <br>
+                Das Agai (Jahr) ((Agaizahl)) ((Agaiwort)). <br>
+                Der Tschabar (Monat) ((Tschabarzahl)) ((Tschabarwort)). <br>
+                Die Vishna (Woche) ((Vishnazahl)) ((Vishnawort)). <br>
+                Der Moriya (Tag) ((Moriyazahl)) ((Moriyawort)). <br>
+                Die Zitika (Stunde) ((Zitikazahl)) ((Zitikawort)). <br>
+                Die Uruwa (Minute) ((Uruwazahl)) ((Uruwawort)). <br>
+                Die Matha (Sekunde) ((Mathazahl)) ((Mathawort)). <br> <br>
 
             </div>
             <div style="width: 40px"> </div>
-            <button onclick='location.href="index.html"'> Zurück zum Kalender </button>
+            <button onclick='location.href="index.html"'> Zurück zum Online-Kalender </button>
 
 
         </div>
@@ -77,7 +80,6 @@
 
 
             var cur_year = wald_seconds_to_years(greg_seconds_to_waldguru_seconds(millies / 1000));
-            console.log("cyear:" + cur_year);
 
             outp.innerHTML = outp.innerHTML.replace(/\(\(Agaizahl\)\)/g, get_current_year(millies / 1000));
             outp.innerHTML = outp.innerHTML.replace(/\(\(Agaiwort\)\)/g, get_day_str(get_current_year_mod(millies / 1000), 1));
@@ -114,7 +116,7 @@
 
 
     <footer>
-        By Waldguru Robert Jeshua - <a href="https://www.waldguru-cbd.at"> www.waldguru-cbd.at </a>
+        By Waldguru Robert Jeshua - <a href="https://www.waldguru.at"> www.waldguru.at </a>
     </footer>
 </body>
 </html>
